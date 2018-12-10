@@ -17,11 +17,8 @@ export class HomePage {
 
   async sendPictureToSomewhere() {
     const base64 = await this.getPicture();
-
     const blob = this.b64toBlob(base64, 'image/jpeg', 512);
-
     await this.sendRemotely(blob);
-
     alert('done');
   }
 
@@ -36,8 +33,6 @@ export class HomePage {
     }
 
     var base64 = await this.camera.getPicture(options);
-
-    //var blob = this.b64toBlob(base64, 'image/jpeg', 512);
 
     return base64;
   }
